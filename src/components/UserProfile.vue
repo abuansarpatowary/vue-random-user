@@ -6,7 +6,7 @@ name: 'UserProfile';
     
         const users = ref([]);
         const getUsers = async () => {
-            const response = await fetch('https://randomuser.me/api/?gender=male&results=10');
+            const response = await fetch('https://randomuser.me/api/?gender=male&results=12');
             const { results } = await response.json();
             users.value = results;
         };
@@ -20,22 +20,15 @@ name: 'UserProfile';
 </script>
 
 <template>
-    <div>
-      <h2>Meet the world's Random Person</h2>
-     <div class="flex flex-wrap">
-    <div v-for="user in users" :key="user.id.value" class="card flex">
-      <div class="card-body">
-        <img :src="user.picture.large" class="card-img-top" :alt="user.name.first">
-        <h5 class="card-title">{{ user.name.first }} {{ user.name.last }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ user.location.city }}, {{ user.location.country }}</h6>
-        <p>{{ user.id.value }}</p>
-        <a :href="user.picture.large" class="card-link">Card link</a>
-        <a :href="user.picture.large" class="card-link">Another link</a>
+    <div class="font-serif text-center">
+      <h2 class="text-4xl md:text-6xl lg:text-8xl font-bold text-center my-8">Meet the world's Random Person</h2>
+     <div class="grid grid-auto-fit-sm text-center place-items-center">
+        <div v-for="user in users" :key="user.id.value" class="card mb-8">
+          <div class="card-body relative">
+            <img :src="user.picture.large" class="card-img-top w-52 h-auto rounded-full" :alt="user.name.first">
+            <span class="card-title bg-white font-semibold rounded-full inline absolute bottom-3 left-0 right-0">{{ user.name.first }}</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-    </div>
 </template>
-<style scoped>
-    
-</style>
