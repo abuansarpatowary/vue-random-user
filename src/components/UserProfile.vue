@@ -34,27 +34,6 @@ name: 'UserProfile';
       </div>
     </div>
   </div>
-
-   <!--  <figure v-for="user in users" :key="user.id.value" class="md:flex bg-slate-100 p-8 md:p-0 dark:bg-slate-800">
-      <img class="w-24 md:w-36 md:rounded-none rounded-full mx-auto" :src="user.picture.large" :alt="user.name.first">
-      <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
-        <blockquote>
-          <p class="text-lg font-medium text-white" @click="getRandomColor">
-            “Tailwind CSS is the only framework that I've seen scale
-            on large teams. It’s easy to customize, adapts to any design,
-            and the build size is tiny.”
-          </p>
-        </blockquote>
-        <figcaption class="font-medium">
-          <div class="text-sky-500 dark:text-sky-400">
-            {{ user.name.first }} {{ user.name.last }}
-          </div>
-          <div class="text-slate-700 dark:text-slate-500">
-            {{ user.location.city }}, {{ user.location.country }}
-          </div>
-        </figcaption>
-      </div>
-    </figure> -->
     </div>
 </template>
 <style scoped>
